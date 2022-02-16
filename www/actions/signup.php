@@ -42,9 +42,12 @@ $query = $db->prepare($sql);
 $query->execute([
 	':email' => $email,
 	':pseudo' => $_POST['name'],
-	':password' => $password
+	':password' => $password,
+    'proprietaire' => 'users'
 ]);
-header("Location:http://127.0.0.1:12001/Login");
+$data = $query->fetchAll(PDO::FETCH_ASSOC);
+$_SESSION['user']=$data;
+header("Location:http://127.0.0.1:12001/Home");
 
 
 

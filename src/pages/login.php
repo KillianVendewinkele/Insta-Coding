@@ -20,25 +20,33 @@
 <header>
     <?php require_once __DIR__ . "/../partials/navbar.php" ?>
 </header>
-<body style="margin-bottom:60px;">
+<body style="margin-top:60px;">
      <div class="container">
         <div class="row">
             <div class="col-12">
                     <h2>Don't have any account?</h2>
             </div>
             <div class="col-12">
-                <form method="post" action="">
+                <?php if(isset($_SESSION['signup_error'])) { ?>
+              <div class="alert alert-danger">
+                <?= $_SESSION['signup_error'] ?>
+              </div>
+            <?php 
+                unset($_SESSION['signup_error']);
+            } 
+            ?>
+                <form method="post" action="/../www/actions/signup.php">
                     <div class="form-group">
                         <label name="name">Your name</label>
-                       <input type="text" class="form-text" name="name" placeholder="Write your name here" required>
+                       <input type="text" class="form-text" name="name" placeholder="Write your name here" >
                     </div>
                     <div class="col-12">
                          <label name="email">Email</label>
-                        <input type="text" class="form-text" name="email" placeholder="Write your email here" required>
+                        <input type="text" class="form-text" name="email" placeholder="Write your email here">
                     </div>
                     <div class="col-12">
                         <label name="password">Your password</label>
-                        <input type="text" class="form-text" name="password" placeholder="Write your password here" required>
+                        <input type="text" class="form-text" name="password" placeholder="Write your password here">
                     </div>
                     <button type="submit" class="btn btn-light">Submit</button>
                     </form>
@@ -54,11 +62,11 @@
                 <form method="post" action="">
                     <div class="col-12">
                          <label name="email">Your email</label>
-                        <input type="text" class="form-text" name="email" placeholder="Write your email here" required> 
+                        <input type="text" class="form-text" name="email" placeholder="Write your email here"> 
                     </div>
                     <div class="col-12">
                          <label name="password">Your password</label>
-                        <input type="text" class="form-text" name="password" placeholder="Write your password here" required>
+                        <input type="text" class="form-text" name="password" placeholder="Write your password here">
                     </div>
                     <button type="submit" class="btn btn-light">Submit</button>
                     </form>
