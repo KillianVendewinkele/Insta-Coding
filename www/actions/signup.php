@@ -41,7 +41,7 @@ $sql = 'INSERT INTO users(email, pseudo, password) VALUES (:email, :pseudo, :pas
 $query = $db->prepare($sql);
 $query->execute([
 	':email' => $email,
-	':pseudo' => $_POST['pseudo'],
+	':pseudo' => $_POST['name'],
 	':password' => $password
 ]);
 header("Location:http://127.0.0.1:12001/Login");
