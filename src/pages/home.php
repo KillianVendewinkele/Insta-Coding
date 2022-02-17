@@ -18,18 +18,18 @@ ob_start() ?>
             
             <?php 
 
-                foreach($_SESSION["idPost"] as $value) {
+                foreach($_SESSION["idPost"] as $key => $value ) {
                      
 
                     ?>
                     <div class="card-wrapper mt-5 col-lg-4 col-md-6 col-xs-12">
                 <div class="card">
                     <div class="card-img-wrapper">
-                    <img class="card-img-top" src="<?=  $value ?>" alt="Card image cap">
+                    <img class="card-img-top" src="<?php echo  $value['url'] ; ?>" alt="Card image capdddddddddddddd">
                     </div>
                     <div class="card-body ">
-                        <p><?= $value ?> &hearts;</p>
-                        <p><?= $value ?>></p>
+                        <p><?php echo $value['likes'] ; ?> &hearts;</p>
+                        <p><?php echo $value['contenu'] ; ?></p>
                     <div class="card-content">
                         <p class="card-text">Comments</p>
                         <a href="#" class="btn btn-default">Add a comment</a>

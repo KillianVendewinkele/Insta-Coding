@@ -9,7 +9,8 @@
       <li class="nav-item">
         <form method="post" action="/actions/searchTag.php">
                     <select name="tag" id="tag">
-                      <option value="">-- Select tag --</option>
+                      <option selected >Open this select menu</option>
+                      <option value=""->All</option>
                       <option value="food">#food</option>
                       <option value="sport">#sport</option>
                       <option value="humour">#humour</option>
