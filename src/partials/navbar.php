@@ -18,7 +18,12 @@
         </form>
       </li>
     </ul>
-       <a class="nav-link disabled" href="/logout">Logout</a>
+     <?php if(empty($_SESSION['user'])){
+      ?>
+      
+       <?php }else{?>
+ <a class="nav-link disabled" href="/Logout">Logout</a>
+       <?php } ?>
   </div>
 </nav>
 

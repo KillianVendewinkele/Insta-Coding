@@ -1,10 +1,9 @@
 <?php
 session_start();
-
 require_once __DIR__.'/../../src/db.php'; 
 
 if( empty($_POST['name']) || empty( $_POST['email']) || empty( $_POST['password']) ){
-    $_SESSION['signup_error']= "Veuillez remplir tout les champs.";
+    $_SESSION['signup_error']= "Please fill in all fields.";
     header("Location: http://127.0.0.1:12001/Login ");
     die();
 }
@@ -17,7 +16,7 @@ die();
 
 $email =filter_var($_POST['email'],FILTER_VALIDATE_EMAIL);
 if($email == false){
-    $_SESSION['signup_error']= "Veuillez saisir un email valide.";
+    $_SESSION['signup_error']= "Please enter a valid email.";
     header("Location: http://127.0.0.1:12001/Login ");
     die();
 }
@@ -33,20 +32,20 @@ $query->execute([
 $data = $query->fetch(PDO::FETCH_ASSOC);
 
 if ($data) {
-    $_SESSION['signup_error']= "Email / pseudo déjà utilisé";
+    $_SESSION['signup_error']= "Email / nickname already used";
     header("Location: http://127.0.0.1:12001/Login ");
     die();
 }
-$sql = 'INSERT INTO users(email, pseudo, password) VALUES (:email, :pseudo, :password)';
+$sql = 'INSERT INTO users(email, pseudo, password,proprietaire) VALUES (:email, :pseudo, :password,:proprietaire)';
 $query = $db->prepare($sql);
 $query->execute([
 	':email' => $email,
 	':pseudo' => $_POST['name'],
 	':password' => $password,
-    'proprietaire' => 'users'
+    ':proprietaire' => 'users'
 ]);
 $data = $query->fetchAll(PDO::FETCH_ASSOC);
-$_SESSION['user']=$data;
+$_SESSION['user']=$data['pseudo'];
 header("Location:http://127.0.0.1:12001/Home");
 
 

@@ -1,4 +1,5 @@
-<?php ob_start() ?>
+<?php 
+$title="Creating";ob_start() ?>
     <div>
         <h2>Add a post efficiently!</h2>
         <form method="get" action="">
@@ -8,6 +9,4 @@
             <input type="file" id="post_picture" name="post_picture" required></input>
         </form>
     </div>
-<?php $content = ob_get_clean(); 
-require(__DIR__.'/../src/partials/template.php');
-?>
+<?php $content = ob_get_clean(); ?>
