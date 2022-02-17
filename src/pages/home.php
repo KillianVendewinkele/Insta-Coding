@@ -3,12 +3,9 @@
 $title="Home";
 ob_start() ?>
 <div class="container-fluid ">
-    <div class="row ">
-        <div class="col-sm-12 col-md-6 col-lg-10 ">
-            <h2>Want to add a new picture?</h2>
-        </div>  
-        <div class="col-sm-12 col-md-6 col-lg-2">
-             <a href="/Create"><button class="btn btn-primary">Add a picture</button></a>
+    <div class="row justify-content-end ">  
+        <div class="col-sm-12 col-md-6 col-lg-2 fixed">
+             <a href="/Create"><button class="btn btn-primary">Add a post</button></a>
         </div> 
     </div>
 </div>
@@ -16,7 +13,10 @@ ob_start() ?>
         <div class="row ">
             <div class="  col-12 ">
                 <div class="row ">
-                        <?php foreach($_SESSION["idPost"] as $key => $value ) { ?>
+                        <?php if (empty($_SESSION['idPost'])) { ?>
+                            <h2>Select a tag</h2>
+                           <?php 
+                              }else{ foreach($_SESSION["idPost"] as $key => $value ) { ?>
                             <div class="card-wrapper  col-12 col-sm-6 col-md-3 ">
                                     <div class="card">
                                         <div class="card-img-wrapper">
@@ -43,7 +43,8 @@ ob_start() ?>
                                         </div>
                                     </div>
                             </div>
-                        <?php }?> 
+                            <?php }
+                         }?> 
                 </div>
             </div>       
         </div>
@@ -130,7 +131,7 @@ ob_start() ?>
         margin-top:3%;
         }
         .card:hover .card-body {
-        height: 70%;
+        height: 100%;
         }
         .card:hover .card-content {
         bottom: 0;

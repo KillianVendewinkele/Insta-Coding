@@ -3,7 +3,7 @@ session_start();
 
 require_once __DIR__.'/../../src/db.php'; 
 
-if(empty($_POST['tag'])){
+if(($_POST['tag']!= "all")){
     $sql = 'SELECT url,contenu,likes FROM post WHERE tag = :tag';
     $query = $db->prepare($sql);
 
