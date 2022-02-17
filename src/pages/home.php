@@ -13,24 +13,33 @@ ob_start() ?>
             </div>
             <div class="col-6">
                 <h2>Want to add a new picture?</h2>
-                <button type="button" href="/Create">Add a picture</button>
+                 <a href="/Create"><button class="btn btn-primary">Add a picture</button></a>
             </div>
-        
-            <div class="card-wrapper mt-5 col-lg-4 col-md-6 col-xs-12">
+            
+            <?php 
+
+                foreach($_SESSION["idPost"] as $key => $value) {
+                     
+
+                    ?>
+                    <div class="card-wrapper mt-5 col-lg-4 col-md-6 col-xs-12">
                 <div class="card">
                     <div class="card-img-wrapper">
-                    <img class="card-img-top" src="https://www.fortech.ro/wp-content/uploads/2018/12/DigitalCommerceSoftwarePlatform-e1554472385425.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="<?= $url ?>" alt="Card image cap">
                     </div>
                     <div class="card-body ">
-                        <p>Description</p>
-                    <h5 class="card-title">Voici une description</h5>
+                        <p><?php  ?> &hearts;</p>
+                        <p><?= $contenu ?></p>Here is a description</h5>
                     <div class="card-content">
-                        <p class="card-text">Commentaires</p>
-                        <a href="#" class="btn btn-default">Ajouter un commentaire</a>
+                        <p class="card-text">Comments</p>
+                        <a href="#" class="btn btn-default">Add a comment</a>
                     </div>
                     </div>
                 </div>
             </div>
+               <?php }
+            ?>
+            
   </div>
 </div>
 

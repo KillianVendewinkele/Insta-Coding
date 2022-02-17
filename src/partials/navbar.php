@@ -7,15 +7,29 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <form>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                    <option name="tag1">Tag 1</option>
-                    <option name="tag2">Tag 2</option>
-                    <option name="tag3">Tag 3</option>
-                    <option name="tag4">Tag 4</option>
-                    <option name="tag5">Tag 5</option>
+        <form method="post" action="/actions/searchTag.php">
+                    <select name="tag" id="tag">
+                      <option value="">-- Select tag --</option>
+                      <option value="food">#food</option>
+                      <option value="sport">#sport</option>
+                      <option value="humour">#humour</option>
+                      <option value="lifestyle">#lifestyle</option>
+                      <option value="tiktok">#tik tok</option>
+                      <option value="selfie">#selfie</option>
                     </select>
+                     <button type="submit" class="btn btn-warning"><i class="bi bi-search"></i></button>
         </form>
+      </li>
+      <li class="nav-item">
+      <?php if(isset($_SESSION['search'])) { ?>
+                                <div class="alert alert-danger">
+                                    <?= $_SESSION['search'] ?>
+                                </div>
+                                <?php 
+                                    unset($_SESSION['search']);
+                                } 
+                                ?>
+
       </li>
     </ul>
      <?php if(empty($_SESSION['user'])){

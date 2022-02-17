@@ -44,6 +44,7 @@ if($data["password"] != $password){
     
 }else{
     $_SESSION['user']= $data['pseudo'];
+    $_SESSION['id']= $data['id'];
     header("Location: http://127.0.0.1:12001/Home ");
 }
 

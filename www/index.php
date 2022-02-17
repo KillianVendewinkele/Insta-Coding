@@ -18,7 +18,7 @@ switch ($request) {
     case '/Create' :
         require __DIR__ . '/../src/pages/addPost.php';
         break;
-        case '/Logout' :
+    case '/Logout' :
         require __DIR__ . '/../www/actions/logout.php';
         break;
    default:
