@@ -24,7 +24,7 @@ ob_start()?>
                                 ?>
                                 <?php if(isset($_SESSION['signup_valid'])) { ?>
                                 <div class="alert alert-success">
-                                    <?= $_SESSION['login_error'] ?>
+                                    <?= $_SESSION['signup_valid'] ?>
                                 </div>
                                 <?php 
                                     unset($_SESSION['signup_valid']);

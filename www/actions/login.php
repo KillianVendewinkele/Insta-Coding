@@ -46,6 +46,7 @@ if($data["password"] != $password){
 
     $_SESSION['user']= $data['pseudo'];
     $_SESSION['id']= $data['id'];
+    $_SESSION['role']=$data['proprietaire'];
 
     $sql = 'SELECT url, contenu,likes,idPost FROM post WHERE id = :id';
     $query = $db->prepare($sql);
@@ -78,7 +79,7 @@ if($data["password"] != $password){
 
         $_SESSION['com']=$dataCom;
 
-    //var_dump( $_SESSION['com']);
+    //var_dump( $_SESSION['role']);
     header("Location: http://127.0.0.1:12001/Home ");
 }
 

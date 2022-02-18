@@ -33,8 +33,12 @@ ob_start() ?>
                 <div class="row ">
                         <?php foreach($_SESSION["com"] as $key => $com ) {
                             foreach($_SESSION["idPost"] as $key => $value ) { ?>
-
+                               
                             <div class="card-wrapper  col-12 my-5 col-sm-6 col-md-3 ">
+                                <div class=" row align-items-end bg-dark">
+                                     <?php require __DIR__.'/../../src/partials/drop.php' ?>
+                                </div>
+                                 
                                     <div class="card">
                                         <div class="card-img-wrapper"> 
                                             <img
@@ -56,7 +60,7 @@ ob_start() ?>
                                                 <?php if($value['idPost'] == $com['idPost']) {?>
                                                     <?php $date = date_create($com['timeCom']);
                                                             ?>
-                                                            <div class="container  ">
+                                                            <div class="container ">
                                                                 <div class="row border border-secondary">
                                                                     <div class="col-6">
                                                                          <p style="font-size:1rem;font-weight: bold;">@<?= $com['pseudo'] ?></p>
@@ -79,7 +83,11 @@ ob_start() ?>
                                         
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-12  p-2 mx-3 ">
-                                        <div class="row ">
+                                        <div class=" col-10 bg-info">
+                                             <?php require __DIR__.'/../../src/partials/dropCom.php' ?>
+                                             </div>
+                                        <div class="row">
+                                            
                                             <div class="col-4 ">
                                                  <a style="bottom:O;" href="#" ><button class="btn btn-danger"><?php echo $value['likes'] ; ?> &hearts;</button></a>
                                             </div>

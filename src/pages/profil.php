@@ -17,6 +17,9 @@ $title="Profil";ob_start() ?>
            <div class="col-2">
             <a href="/Home"><button class="btn btn-warning">Back</button></a>
            </div>
+           <div class="col">
+                <?= $_SESSION['role'] ;?>
+           </div>
            <div class="col-12">
                <div class="container-fluid mt-4">
         <div class="row ">
