@@ -96,7 +96,7 @@ ob_start() ?>
                 </div>
             </div> 
             
-                <a href="#" style="left:0;bottom:0;;"><button class="btn btn-dark"><i class="bi bi-arrow-up-circle-fill" style=""></i></button></a>      
+                <a href="#" style="left:0;bottom:0;"><button class="btn btn-dark"><i class="bi bi-arrow-up-circle-fill" ></i></button></a>      
         </div>
 </div>
   
