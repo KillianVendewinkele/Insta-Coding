@@ -36,13 +36,13 @@ if ($data) {
     header("Location: http://127.0.0.1:12001/Login ");
     die();
 }
-$sql = 'INSERT INTO users(email, pseudo, password,proprietaire) VALUES (:email, :pseudo, :password,:proprietaire)';
+$sql = 'INSERT INTO users(email, pseudo, password,roles) VALUES (:email, :pseudo, :password,:proprietaire)';
 $query = $db->prepare($sql);
 $query->execute([
 	':email' => $email,
 	':pseudo' => $_POST['name'],
 	':password' => $password,
-    ':proprietaire' => 'users'
+    ':roles' => 'users'
 ]);
 $data = $query->fetchAll(PDO::FETCH_ASSOC);
     $_SESSION['signup_valid']="Congratulations welcome among us";

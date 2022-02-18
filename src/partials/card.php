@@ -1,7 +1,7 @@
 <div class="card-wrapper  col-12 my-5 col-sm-6 col-md-3 ">
                                 <div class=" row align-items-end bg-dark">
 
-                                     <?php if($_SESSION['role'] == "admin"){
+                                     <?php if($_SESSION['user']['roles'] == "admin"){
                                          require __DIR__.'/../../src/partials/drop.php'; }
                                          ?>
                                 </div>
@@ -22,12 +22,17 @@
                                                     <p><?php echo $value['contenu'] ; ?></p>
                                                 </div>
                                             </div>
-                                            <div class="card-content">
+                                                                                                     
+                                            <div class="card-content  ">
                                                <h5 class="card-text">Comments</h5>
-                                                <?php if($value['idPost'] == $com['idPost']) {?>
-                                                    <?php $date = date_create($com['timeCom']);
+                                               <div class="com">
+
+                                               
+                                                    <?php   foreach ($listCom as $key => $com) { ?>    
+                                                        <?php if($value['idPost'] == $com['idPost']) {?>
+                                                            <?php $date = date_create($com['timeCom']);
                                                             ?>
-                                                            <div class="container ">
+                                                            <div class=" container my-2">
                                                                 <div class="row border border-secondary">
                                                                     <div class="col-6">
                                                                          <p style="font-size:1rem;font-weight: bold;">@<?= $com['pseudo'] ?></p>
@@ -41,17 +46,20 @@
                                                                 </div>
                                                             </div>
                                                                 
-                                                            <?php }else{
+                                                                            <?php }else{
 
-                                                            }?>
+                                                                            }?>
+                                                                            <?php   }  ?>
+                                                </div>
                                                 
                                             </div>
+                                             
                                         </div>
                                         
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-12  p-2 mx-3 ">
                                         <div class=" col-10 ">
-                                             <?php if ($_SESSION['role'] == "admin") {
+                                             <?php if ($_SESSION['user']['roles'] == "admin") {
                                                   require __DIR__.'/../../src/partials/dropCom.php';
                                              } 
                                              ?>
@@ -61,7 +69,7 @@
                                             <div class="col-4 ">
                                                  <form method="post" action="/actions/like.php">
                                                     <input type="hidden" name="idPost" value="<?= $value['idPost'] ?>">
-                                                    <a style="bottom:O;"href="#"> <button type="submit" class="btn btn-danger" value='<?= $value['likes']; ?>'> <?= $value['likes'] ?>&hearts; </button> </a>
+                                                    <a style="bottom:O;"href="#"> <button type="submit" class="btn btn-danger" name="val"value='<?= $value['likes']; ?>'> <?= $value['likes'] ?>&hearts; </button> </a>
                                                 </form>
                                             </div>
                                             <div class="col-6 ">

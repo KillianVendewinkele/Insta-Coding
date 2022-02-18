@@ -44,42 +44,11 @@ if($data["password"] != $password){
     
 }else{
 
-    $_SESSION['user']= $data['pseudo'];
-    $_SESSION['id']= $data['id'];
-    $_SESSION['role']=$data['proprietaire'];
+    $_SESSION['user']= $data;
 
-    $sql = 'SELECT url, contenu,likes,idPost FROM post WHERE id = :id';
-    $query = $db->prepare($sql);
-    $query->execute([
-        ':id' => $_SESSION['id']
-    ]);
-    $dataPost = $query->fetchAll(PDO::FETCH_ASSOC);
-    $_SESSION['profil']=$dataPost;
-    //Affiche le nombre de post  
-        $sql = 'SELECT count(idPost) FROM post WHERE id = :id';
-        $query = $db->prepare($sql);
-        $query->execute([
-            ':id' => $_SESSION['id']
-        ]);
-        $dataTotal = $query->fetch(PDO::FETCH_ASSOC);
-        $_SESSION['total']=$dataTotal;
-     //Affiche toutes les publications    
-        $sql = 'SELECT url, contenu,likes,idPost FROM post ';
-        $query = $db->prepare($sql);
-        $query->execute([]);
-        $data = $query->fetchAll(PDO::FETCH_ASSOC);
+    
 
-        $_SESSION['idPost']=$data;
-        shuffle($_SESSION['idPost']);
-    //Affiche toutes les commentaires    
-        $sql = 'SELECT comment.contenuCom,comment.timeCom,comment.idPost, users.pseudo FROM `comment`, `users` WHERE comment.id = users.id  ';
-        $query = $db->prepare($sql);
-        $query->execute([]);
-        $dataCom = $query->fetchAll(PDO::FETCH_ASSOC);
-
-        $_SESSION['com']=$dataCom;
-
-    //var_dump( $_SESSION['role']);
+    //var_dump( $_SESSION['user']);
     header("Location: http://127.0.0.1:12001/Home ");
 }
 

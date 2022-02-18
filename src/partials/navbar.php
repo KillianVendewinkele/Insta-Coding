@@ -11,19 +11,20 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row justify-content-end ">
               <?php if(empty($_SESSION['user'])){
                             ?>
                           <h1>InstaCoding</h1>
                             <?php }else{?>
-                <div class="col-4">
-                     <div class="col-12 ">
-                       <a href="/Profil"><button class= "btn btn-default" ><i class="bi bi-person-fill" style="font-size:1rem;" >@<?= $_SESSION['user']?></i></button></a>    
-                    </div>
+                <div class="col-5 ">
+                        <div class="col-12 ">
+                            <a href="/Profil"><button class= "btn btn-default" ><i class="bi bi-person-fill" style="font-size:1rem;" >@<?= $_SESSION['user']['pseudo']?></i></button></a>    
+                        </div>
+
                 </div>
-                <div class="col-4">
+                <div class="col-5 ">
                         <form method="post" action="/actions/searchTag.php">
                           <div class="col-12">
                               <select class="form-select " style="width:80%;height:50px;" name="tag">
@@ -41,18 +42,21 @@
                           </div>
                       </form>
                 </div>
-                <div class="col-4">
-                    <div class="row justify-content-end">
-                        <div class="col-3">
-                            <i class="bi bi-bell-fill" style="font-size: 2rem"></i>
-                        </div>
-                        <div class="col-3">
-                            <i class="bi bi-chat-dots" style="font-size: 2rem"></i>
-                        </div>
-                        <div class="col-6">
-                            <a  class="nav-link " href="/Logout"><button class="btn btn-danger">Logout</button></a>
-                            <?php } ?>
-                        </div>
+                <div class="col-2 ">
+                    <div class="row justify-content-end ">
+                        <div class="col-12 ">
+                            <div class="dropdown">
+                                    <button class="btn " style="color:none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="bi bi-gear-wide" style="font-size:2rem;"></i>
+                                    </button>
+                                    <div class="dropdown-menu" style="background:none;" aria-labelledby="dropdownMenuButton">
+                                        <a href="/Create"><button style="width:100%;" class="btn btn-light">Add a post</button></a>
+                                        <a href="/Logout"><button style="width:100%;" class="btn btn-light">Logout</button></a>
+                                    </div>
+                            </div>
+                                <?php }?> 
+                        
+                        </div>          
                     </div>
                 </div>
             </div>
