@@ -59,7 +59,10 @@
                                         <div class="row">
                                             
                                             <div class="col-4 ">
-                                                 <a style="bottom:O;" href="#" ><button class="btn btn-danger"><?php echo $value['likes'] ; ?> &hearts;</button></a>
+                                                 <form method="post" action="/actions/like.php">
+                                                    <input type="hidden" name="idPost" value="<?= $value['idPost'] ?>">
+                                                    <a style="bottom:O;"href="#"> <button type="submit" class="btn btn-danger" value='<?= $value['likes']; ?>'> <?= $value['likes'] ?>&hearts; </button> </a>
+                                                </form>
                                             </div>
                                             <div class="col-6 ">
                                                 <div class="row justify-content-start">
