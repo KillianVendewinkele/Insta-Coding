@@ -1,6 +1,9 @@
 <div class="card-wrapper  col-12 my-5 col-sm-6 col-md-3 ">
                                 <div class=" row align-items-end bg-dark">
-                                     <?php require __DIR__.'/../../src/partials/drop.php' ?>
+
+                                     <?php if($_SESSION['role'] == "admin"){
+                                         require __DIR__.'/../../src/partials/drop.php'; }
+                                         ?>
                                 </div>
                                  
                                     <div class="card">
@@ -48,7 +51,10 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-12  p-2 mx-3 ">
                                         <div class=" col-10 bg-info">
-                                             <?php require __DIR__.'/../../src/partials/dropCom.php' ?>
+                                             <?php if ($_SESSION['role'] == "admin") {
+                                                  require __DIR__.'/../../src/partials/dropCom.php';
+                                             } 
+                                             ?>
                                         </div>
                                         <div class="row">
                                             

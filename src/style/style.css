@@ -1,5 +1,11 @@
 /* --------------------- General --------------------------*/
 body{
     height:3000px;
-    background-color: #f2f2f2;
+    
 }
+#fond{
+        margin-top:30px;
+        height:auto;
+        background:yellow;
+    }
+

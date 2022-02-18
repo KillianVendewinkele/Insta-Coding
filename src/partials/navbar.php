@@ -20,7 +20,7 @@
                             <?php }else{?>
                 <div class="col-4">
                      <div class="col-12 ">
-                       <a href="/Profil"><button class= "btn btn-default" ><i class="bi bi-person-fill" style="font-size:2rem;" >@<?= $_SESSION['user']?></i></button></a>    
+                       <a href="/Profil"><button class= "btn btn-default" ><i class="bi bi-person-fill" style="font-size:1rem;" >@<?= $_SESSION['user']?></i></button></a>    
                     </div>
                 </div>
                 <div class="col-4">
