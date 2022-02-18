@@ -71,7 +71,7 @@ ob_start() ?>
                                     <div class="col-12 col-sm-6 col-md-12  p-2 ">
                                         <div class="row ">
                                             <div class="col-4 ">
-                                                 <a style="bottom:O;"href="#"><button class="btn btn-danger"><?php echo $value['likes'] ; ?> &hearts;</button></a>
+                                                 <a style="bottom:O;" href="#" ><button class="btn btn-danger"><?php echo $value['likes'] ; ?> &hearts;</button></a>
                                             </div>
                                             <div class="col-6 ">
                                                 <div class="row justify-content-start">

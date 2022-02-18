@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <img
         src="https://cdn.pixabay.com/photo/2021/07/27/08/20/instagram-icon-6496194_1280.png"
-        alt="aa"
+        alt=""
         style="width: 5%"
     />
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
@@ -20,13 +20,13 @@
                             <?php }else{?>
                 <div class="col-4">
                      <div class="col-12 ">
-                       <a href="/Profil"><button class="btn btn-default"><i class="bi bi-person-fill" style="font-size:2rem;">@<?= $_SESSION['user']?></i></button></a>    
+                       <a href="/Profil"><button class= "btn btn-default" ><i class="bi bi-person-fill" style="font-size:2rem;" >@<?= $_SESSION['user']?></i></button></a>    
                     </div>
                 </div>
                 <div class="col-4">
                         <form method="post" action="/actions/searchTag.php">
                           <div class="col-12">
-                              <select class="form-select " style="width:80%;height:50px;"name="tag">
+                              <select class="form-select " style="width:80%;height:50px;" name="tag">
                                   <option selected value="all">All</option>
                                   <option value="food">#food</option>
                                   <option value="sport">#sport</option>
@@ -47,7 +47,7 @@
                             <i class="bi bi-bell-fill" style="font-size: 2rem"></i>
                         </div>
                         <div class="col-3">
-                            <i class="bi bi-chat-dots"style="font-size: 2rem"></i>
+                            <i class="bi bi-chat-dots" style="font-size: 2rem"></i>
                         </div>
                         <div class="col-6">
                             <a  class="nav-link " href="/Logout"><button class="btn btn-danger">Logout</button></a>
