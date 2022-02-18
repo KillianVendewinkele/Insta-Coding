@@ -5,10 +5,11 @@ $title="Profil";ob_start() ?>
             <div class="col-10 ">
                 <div class="row">
                     <div class="col-5  ">
-                    photo
+                        <a href="/Profil"><button style="background:#FFFFFF;" class="btn  rounded-circle "><i class="bi bi-person-fill" style="font-size:4rem;"></i></button></a>  
+                        @<?= $_SESSION['user']?>  
                     </div>
                     <div class="col-6 ml-5 ">
-                        <h1>Nombre de post:<?= $_SESSION['total']['count(idPost)'] ?></h1> 
+                        <h4>Publications:<?= $_SESSION['total']['count(idPost)'] ?></h4> 
                     </div>
                 </div>
                 

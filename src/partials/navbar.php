@@ -51,9 +51,9 @@
                         </div>
                         <div class="col-6">
                             
-                            <a class="nav-link disabled" href="/Logout"
-                                ><i class="bi bi-box-arrow-in-left"></i
-                                >Logout
+                            <a  class="nav-link " href="/Logout"
+                                ><button class="btn btn-danger"><i class="bi bi-box-arrow-in-left" style="font-size:1rem;"></istyle="font-size:2rem;
+                                >Logout</button>
                             </a>
                             <?php } ?>
                         </div>
