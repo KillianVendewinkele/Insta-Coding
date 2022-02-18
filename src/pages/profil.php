@@ -26,77 +26,9 @@ $title="Profil";ob_start() ?>
             <div class="  col-12 ">
                 <div class="row ">
                            <?php  foreach($_SESSION["com"] as $key => $com ) {
-                               foreach($_SESSION["profil"] as $key => $value ) { ?>
-                            <div class="card-wrapper  col-12 my-5 col-sm-6 col-md-3  ">
-                                    <div class="card">
-                                        <div class="card-img-wrapper"> 
-                                            <img
-                                                class="card-img-top"
-                                                src="<?php echo  $value['url'] ; ?>"
-                                                alt=""
-                                                
-                                            />
-                                        </div>
-                                        <div class="card-body ">
-                                            <div class="row">
-                                               
-                                                <div class="col-12">
-                                                    <p><?php echo $value['contenu'] ; ?></p>
-                                                </div>
-                                            </div>
-                                            <div class="card-content">
-                                                <h5 class="card-text">Comments</h5>
-                                                <?php if($value['idPost'] == $com['idPost']) {?>
-                                                    <?php $date = date_create($com['timeCom']);
-                                                            ?>
-                                                            <div class="container border border-secondary ">
-                                                                <div class="row">
-                                                                    <div class="col-6">
-                                                                         <p style="font-size:1rem;">@<?= $com['pseudo'] ?></p>
-                                                                    </div>
-                                                                    <div class="col-6">
-                                                                        <p style="font-size:1rem;" ><?= $com['contenuCom'] ?></p>
-                                                                    </div>
-                                                                     <div class="col-7">
-                                                                            <p><small><?=date_format($date, 'H:i d-m-Y');?></small></p>                     
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                                
-                                                            <?php }else{
-
-                                                            }?>
-                                                
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="col-12 my-2 col-sm-6 col-md-12  p-2 ">
-                                        <div class="row ">
-                                            <div class="col-4 ">
-                                                 <a style="bottom:O;width:10%;" href="#"><button class="btn btn-danger"><?php echo $value['likes'] ; ?> &hearts;</button></a>
-                                            </div>
-                                            <div class="col-6 ">
-                                                <div class="row justify-content-start">
-                                                    <form action="/actions/comment.php" method="post">
-                                                        <div class="col-6 ">
-                                                            
-                                                            <input type="hidden" name="idPost" value="<?= $value['idPost'] ?>">
-                                                            <input type="text" name="comment">
-                                                        </div>
-                                                        <div class="col-6 ">
-                                                            <button type="submit" class="btn btn-primary">Go</button>
-                                                            
-                                                    </div> 
-                                                    </form>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>       
-                                    </div>
-                                     
-                            </div>
-                            <?php } 
+                               foreach($_SESSION["profil"] as $key => $value ) { 
+                                 require __DIR__.'/../../src/partials/card.php'; 
+                             } 
                         }?> 
                 </div>
             </div> 

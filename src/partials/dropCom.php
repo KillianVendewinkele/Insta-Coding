@@ -1,4 +1,4 @@
-<div class="col-2 " style="position:absolute;right:0;">
+<div class="col-12 " style="position:absolute;right:0;">
     <div class="dropdown">
         <button
             class="btn"
