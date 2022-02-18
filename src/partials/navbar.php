@@ -50,11 +50,7 @@
                             <i class="bi bi-chat-dots"style="font-size: 2rem"></i>
                         </div>
                         <div class="col-6">
-                            
-                            <a  class="nav-link " href="/Logout"
-                                ><button class="btn btn-danger"><i class="bi bi-box-arrow-in-left" style="font-size:1rem;"></istyle="font-size:2rem;
-                                >Logout</button>
-                            </a>
+                            <a  class="nav-link " href="/Logout"><button class="btn btn-danger">Logout</button></a>
                             <?php } ?>
                         </div>
                     </div>
