@@ -45,9 +45,8 @@ $query->execute([
     ':proprietaire' => 'users'
 ]);
 $data = $query->fetchAll(PDO::FETCH_ASSOC);
-$_SESSION['user']= $data['pseudo'];
-$_SESSION['id']= $data['id'];
-header("Location:http://127.0.0.1:12001/Home");
+    $_SESSION['signup_valid']="Congratulations welcome among us";
+header("Location:http://127.0.0.1:12001/Login");
 
 
 

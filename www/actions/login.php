@@ -43,8 +43,27 @@ if($data["password"] != $password){
     header("Location: http://127.0.0.1:12001/Login ");
     
 }else{
+
     $_SESSION['user']= $data['pseudo'];
     $_SESSION['id']= $data['id'];
+
+    $sql = 'SELECT url, contenu,likes,idPost FROM post WHERE id = :id';
+    $query = $db->prepare($sql);
+    $query->execute([
+        ':id' => $_SESSION['id']
+    ]);
+    $dataPost = $query->fetchAll(PDO::FETCH_ASSOC);
+    $_SESSION['profil']=$dataPost;
+    //Affiche le nombre de post  
+        $sql = 'SELECT count(idPost) FROM post WHERE id = :id';
+        $query = $db->prepare($sql);
+        $query->execute([
+            ':id' => $_SESSION['id']
+        ]);
+        $dataTotal = $query->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['total']=$dataTotal;
+         
+
     header("Location: http://127.0.0.1:12001/Home ");
 }
 

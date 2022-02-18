@@ -1,4 +1,4 @@
-x<?php 
+<?php 
 $title="Login";
 ob_start()?> 
 <!-- Container Global -->
@@ -6,7 +6,7 @@ ob_start()?>
          <!-- Container to display on row -->
         <div class="row">
              <!-- Container to display the first form with this title -->
-            <div class="col-12">
+            <div class="col-6 mt-2">
                  <!-- Container to display the title of the first form -->
                 <div class="col-12">
                     <h2>Don't have any account?</h2>
@@ -22,12 +22,20 @@ ob_start()?>
                                     unset($_SESSION['signup_error']);
                                 } 
                                 ?>
+                                <?php if(isset($_SESSION['signup_valid'])) { ?>
+                                <div class="alert alert-success">
+                                    <?= $_SESSION['login_error'] ?>
+                                </div>
+                                <?php 
+                                    unset($_SESSION['signup_valid']);
+                                } 
+                                ?>
                         <!-- The form -->
                         <form method="post" action="/actions/signup.php">
                             <div class="form-group">
                                 <label for="">Your name</label>
                                 <input type="text" class="form-control" class="form-control" name="name" placeholder="Write your name ">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            
                             </div>
                             <div class="form-group">
                                 <label for="">Email</label>
@@ -41,7 +49,7 @@ ob_start()?>
                         </form>
                 </div>
             </div>
-            <div class="col-12 mt-4">
+            <div class="col-6 mt-2">
                 <!-- Container to display the title of the first form -->
                 <div class="col-12">
                    <h2>Already have an account?</h2>

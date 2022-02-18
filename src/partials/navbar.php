@@ -14,7 +14,15 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4"></div>
+              <?php if(empty($_SESSION['user'])){
+                            ?>
+                          <h1>InstaCoding</h1>
+                            <?php }else{?>
+                <div class="col-4">
+                     <div class="col-12 ">
+                       <a href="/Profil"><button class="btn btn-default"><i class="bi bi-person-fill" style="font-size:2rem;">@<?= $_SESSION['user']?></i></button></a>    
+                    </div>
+                </div>
                 <div class="col-4">
                         <form method="post" action="/actions/searchTag.php">
                           <div class="col-12">
@@ -24,7 +32,7 @@
                                   <option value="sport">#sport</option>
                                   <option value="humour">#humour</option>
                                   <option value="lifestyle">#lifestyle</option>
-                                  <option value="tiktok">#tik tok</option>
+                                  <option value="mood">#mood</option>
                                   <option value="selfie">#selfie</option>
                               </select>
                                <button type="submit" style="height:10%;height:50px;" class="btn btn-light">
@@ -42,10 +50,7 @@
                             <i class="bi bi-chat-dots"style="font-size: 2rem"></i>
                         </div>
                         <div class="col-6">
-                            <?php if(empty($_SESSION['user'])){
-                            ?>
-
-                            <?php }else{?>
+                            
                             <a class="nav-link disabled" href="/Logout"
                                 ><i class="bi bi-box-arrow-in-left"></i
                                 >Logout

@@ -24,25 +24,29 @@ $title="Creating";ob_start() ?>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Enter your url</label>
-                        <input type="password" class="form-control" name="post_picture" placeholder="Url please">
+                        <input type="text" class="form-control" name="post_picture" placeholder="Url please">
                     </div>
                     <div class="form-group">
+                        <label for="exampleInputPassword1">Famous Tag On InstaCoding</label>
                         <select name="tag" id="tag">
                                     <option value="">-- Select tag --</option>
                                     <option value="food">#food</option>
                                     <option value="sport">#sport</option>
                                     <option value="humour">#humour</option>
                                     <option value="lifestyle">#lifestyle</option>
-                                    <option value="tiktok">#tik tok</option>
+                                    <option value="mood">#mood</option>
                                     <option value="selfie">#selfie</option>
                                 </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </form>
+                <div class="col-12 mt-5">
+                    <a href="/Home"><button class="btn btn-dark">Back to the home</button></a>
+                </div>
             </div>
-            <div class="col-12">
-                <a href="/Home"><button class="btn btn-dark">Back to the home</button></a>
-            </div>
+            
         </div>
     </div>
    

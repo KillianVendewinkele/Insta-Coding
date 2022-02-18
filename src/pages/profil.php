@@ -1,49 +1,28 @@
-
 <?php 
-$title="Home";
-ob_start() ?>
-<div class="container-fluid ">
-    <div class="row justify-content-end ">  
-        <div class="col-7">
-            <?php if(isset($_SESSION['comment_error'])) { ?>
-                                <div class="alert alert-danger">
-                                    <?= $_SESSION['comment_error'] ?>
-                                </div>
-                                <?php 
-                                    unset($_SESSION['comment_error']);
-                                } 
-                                ?>
-            <?php if(isset($_SESSION['comment_valide'])) { ?>
-                                <div class="alert alert-success">
-                                    <?= $_SESSION['comment_valide'] ?>
-                                </div>
-                                <?php 
-                                    unset($_SESSION['comment_valide']);
-                                } 
-                                ?>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-2 fixed">
-             <a href="/Create"><button class="btn btn-primary">Add a post</button></a>
-        </div> 
-    </div>
-</div>
-<div class="container-fluid mt-4">
+$title="Profil";ob_start() ?>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-10 ">
+                <div class="row">
+                    <div class="col-5  ">
+                    photo
+                    </div>
+                    <div class="col-6 ml-5 ">
+                        <h1>Nombre de post:<?= $_SESSION['total']['count(idPost)'] ?></h1> 
+                    </div>
+                </div>
+                
+           </div>   
+           <div class="col-2">
+            <a href="/Home"><button class="btn btn-warning">Back</button></a>
+           </div>
+           <div class="col-12">
+               <div class="container-fluid mt-4">
         <div class="row ">
             <div class="  col-12 ">
                 <div class="row ">
-                        <?php if (empty($_SESSION['idPost'])) { ?>
-                           <div class="jumbotron">
-                                <h1 class="display-4">Hello, <?= $_SESSION['user'] ?></h1>
-                                <p class="lead">To find out what happened in your absence do not hesitate to use our search tool at the top of your application.</p>
-                                <hr class="my-4">
-                                <p>We wish you a pleasant time with us.</p>
-                                <p class="lead">
-                                    <p><small>InstaCoding</small></p>
-                                </p>
-                            </div>
                            <?php 
-                              }else{ foreach($_SESSION["idPost"] as $key => $value ) { ?>
-                            
+                               foreach($_SESSION["profil"] as $key => $value ) { ?>
                             <div class="card-wrapper  col-12 col-sm-6 col-md-3 ">
                                     <div class="card">
                                         <div class="card-img-wrapper"> 
@@ -91,16 +70,19 @@ ob_start() ?>
                                     </div>
                                      
                             </div>
-                            <?php }
-                         }?> 
+                            <?php } ?> 
                 </div>
             </div> 
             
                 <a href="#" style="left:0;bottom:0;;"><button class="btn btn-dark"><i class="bi bi-arrow-up-circle-fill" style=""></i></button></a>      
         </div>
 </div>
-  
- 
+           </div>
+           
+
+        </div>
+    </div>
+   
     <style>
         .card-wrapper {
         margin-bottom: 30px;
@@ -198,4 +180,3 @@ ob_start() ?>
        
     </style>
 <?php $content = ob_get_clean(); ?>
-

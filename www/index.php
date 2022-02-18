@@ -21,6 +21,12 @@ switch ($request) {
     case '/Logout' :
         require __DIR__ . '/../www/actions/logout.php';
         break;
+    case '/Profil' :
+        require __DIR__ . '/../src/pages/profil.php';
+        break;
+    case '/Comment' :
+        require __DIR__ . '/../src/pages/comment.php';
+        break;
    default:
         http_response_code(404);
         require __DIR__ . '/../src/pages/404.php';
