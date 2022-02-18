@@ -50,7 +50,7 @@
                                         
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-12  p-2 mx-3 ">
-                                        <div class=" col-10 bg-info">
+                                        <div class=" col-10 ">
                                              <?php if ($_SESSION['role'] == "admin") {
                                                   require __DIR__.'/../../src/partials/dropCom.php';
                                              } 
