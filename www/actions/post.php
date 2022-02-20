@@ -12,11 +12,10 @@
     $query = $db->prepare($sql);
     $query->execute([
 	    ':contenu' => $_POST["post_title"],
-	    ':id' => $_SESSION['id'],
+	    ':id' => $_SESSION['user']['id'],
 	    ':url' => $_POST["post_picture"],
         ':likes' => 0,
         ':tag' => $_POST["tag"]
 ]);
 
     header("Location: http://127.0.0.1:12001/Home");
-?>

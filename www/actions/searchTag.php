@@ -3,30 +3,20 @@ session_start();
 
 require_once __DIR__.'/../../src/db.php'; 
 
-if(($_POST['tag']!= "all")){
-    $sql = 'SELECT url,contenu,likes, idPost FROM post WHERE tag = :tag';
+if(!empty($_POST['tag'])){
+    $sql = 'SELECT url, contenu,likes,idPost,users.pseudo,tag FROM post,users WHERE post.id = users.id AND tag = :tag';
     $query = $db->prepare($sql);
-
+    $tag = strtolower($_POST['tag']);
     $query->execute([
-        ':tag' => $_POST['tag'],
+        ':tag' => $tag
     ]);
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
-
-    $_SESSION['idPost']=$data;
-    shuffle($_SESSION['idPost']);
-    header("Location: http://127.0.0.1:12001/Home");
+    $_SESSION['list']= $data;
+    $_SESSION['search']= $_POST['tag'];
+    header("Location: http://127.0.0.1:12001/Search");
     die();
 }
+$_SESSION['list']=array();
+$_SESSION['search_error']= "sorry your search failed";
+header("Location: http://127.0.0.1:12001/Search");
 
-$sql = 'SELECT url, contenu,likes,idPost FROM post ';
-    $query = $db->prepare($sql);
-    $query->execute([]);
-    $data = $query->fetchAll(PDO::FETCH_ASSOC);
-
-    $_SESSION['idPost']=$data;
-    shuffle($_SESSION['idPost']);
-
-
-    header("Location: http://127.0.0.1:12001/Home");
-
-//var_dump($_SESSION['idPost']['0']['likes']);

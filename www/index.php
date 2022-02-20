@@ -13,8 +13,17 @@ switch ($request) {
     case '/Home' :
         require __DIR__ . '/../src/pages/home.php';
         break;
+    case '/Search' :
+        require __DIR__ . '/../src/pages/search.php';
+        break;
     case '/Create' :
         require __DIR__ . '/../src/pages/addPost.php';
+        break;
+    case '/UpdatePost' :
+        require __DIR__ . '/../src/pages/updatePost.php';
+        break;
+    case '/UpdateCom' :
+        require __DIR__ . '/../src/pages/updateCom.php';
         break;
     case '/Logout' :
         require __DIR__ . '/../www/actions/logout.php';
@@ -51,105 +60,24 @@ switch ($request) {
         #fond{
         margin-top:30px;
         height:auto;
-        }
-        .card-wrapper {
-        margin-bottom: 30px;
-        }
-        .card-image .card .card-img-wrapper {
-        height: 100%;
-        }
-        .card-image .card .card-body {
-        display: none;
-        }
-        .card-image-title-description .card .card-img-wrapper {
-        max-height: 160px;
-        }
-        .card-image-title-description .card {
-        position: relative;
-        min-height: 300px;
-        }
-        .card-image-title-description .card .card-body {
-        height: auto;
-        position: relative;
-        top: 0;
-        margin-bottom: -70px;
-        }
-        .card-image-title-description .card:hover .card-body {
-        top: -70px;
-        }
-        .card-image-title-description .card .card-body .card-title {
-        margin-bottom: .75rem;
+        
         }
         .card {
         display: inline-block;
         position: relative;
-        overflow: hidden;
-        max-height: 400px;
-        max-width:400px;
-        height: 100%;
-        }
-        .card:hover {
-        box-shadow: 8px 12px 31px -10px yellow;
-        }
-        .card-img-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        overflow: hidden;
-        }
-        .card-img-wrapper img {
-        transition: 1.5s ease;
-        }
-        .card:hover .card-img-wrapper img {
-        transform: scale(1.15);
-        }
-        .card-body .card-title {
-        margin-bottom: calc(50% + 20px);
-        transition: 1.5s ease;
-        }
-        .card:hover .card-body .card-title {
-        margin-bottom: .75rem;
-        }
+        max-width:900px;
+        height: 70%;
+        margin-bottom:5%;
+        border:none;
+        background: #FFFF;
+        width:70%;
 
-        .card-body {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 70px;
-        background-color: #fff;
-        transition: 1.5s ease;
         }
-        .card-content {
-        left: 0;
-        right: 0;
-        overflow: hidden;
-        width: 100%;
-        height: auto;
-        transition: 1.5s ease;
-        margin-top:3%;
-        }
-        .card:hover .card-body {
-        height: 100%;
-        }
-        .card:hover .card-content {
-        bottom: 0;
         
-        }
-         
-        .card-img-top {
-        width: 100%;
-        height:100%;
-        max-width: 400px;
-        max-height: 400px;
-        border-top-left-radius: calc(0.25rem - 1px);
-        border-top-right-radius: calc(0.25rem - 1px);
-        overflow:scroll;
-        }
         .com{
+            
             width: 100%;
-            height: 200px;
+            max-height:100px;
             overflow: scroll;
         }
         
@@ -157,7 +85,7 @@ switch ($request) {
     </style>
     
 </head>
-<body style="margin-top:100px;">
+<body style="margin-top:100px;background: #EEEEEE;">
 <?php require_once __DIR__ . "/../src/partials/navbar.php" ?>
  <section id="fond">
 <?php if($content == " "){

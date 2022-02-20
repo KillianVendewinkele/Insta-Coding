@@ -27,33 +27,33 @@
                 <div class="col-5 ">
                         <form method="post" action="/actions/searchTag.php">
                           <div class="col-12">
-                              <select class="form-select " style="width:80%;height:50px;" name="tag">
-                                  <option selected value="all">All</option>
-                                  <option value="food">#food</option>
-                                  <option value="sport">#sport</option>
-                                  <option value="humour">#humour</option>
-                                  <option value="lifestyle">#lifestyle</option>
-                                  <option value="mood">#mood</option>
-                                  <option value="selfie">#selfie</option>
-                              </select>
-                               <button type="submit" style="height:10%;height:50px;" class="btn btn-light">
+                              <div class="row">
+                                  <div class="col">
+                                         <input type="text" name="tag" class="form-control"placeholder="Search"> 
+                                  </div>
+                                  <div class="col-0">
+                                        <button type="submit" style="height:10%;height:50px;" class="btn btn-light">
                                   <i class="bi bi-search " style="font-size:1,5rem;"></i>
                               </button>
+                                  </div>
+                              </div>
                           </div>
                       </form>
                 </div>
                 <div class="col-2 ">
                     <div class="row justify-content-end ">
                         <div class="col-12 ">
-                            <div class="dropdown">
-                                    <button class="btn " style="color:none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="bi bi-gear-wide" style="font-size:2rem;"></i>
-                                    </button>
-                                    <div class="dropdown-menu" style="background:none;" aria-labelledby="dropdownMenuButton">
-                                        <a href="/Create"><button style="width:100%;" class="btn btn-light">Add a post</button></a>
-                                        <a href="/Logout"><button style="width:100%;" class="btn btn-light">Logout</button></a>
-                                    </div>
-                            </div>
+                            <div class="dropdown dropleft">
+                                <button class="btn " style="color:none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="bi bi-gear-wide" style="font-size:2rem;"></i>
+                                                                </button>
+                                <div class="dropdown-menu">
+                                         <a href="/Create"><button style="width:100%;" class="btn btn-none">Add a post</button></a>
+                                          <a href="/Logout"><button style="width:100%;" class="btn btn-none">Logout</button></a>
+                                </div>
+                                </div>
+                                                    
+
                                 <?php }?> 
                         
                         </div>          

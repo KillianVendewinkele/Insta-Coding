@@ -7,14 +7,8 @@ $title="Creating";ob_start() ?>
                 
             </div>
             <div class="col-12">
-                    <?php if(isset($_SESSION['post_error'])) { ?>
-                                <div class="alert alert-danger">
-                                    <?= $_SESSION['post_error'] ?>
-                                </div>
-                                <?php 
-                                    unset($_SESSION['post_error']);
-                                } 
-                                ?>
+                    
+                            <?php require __DIR__.'/../../src/partials/result/postResult.php'?>
             </div>
             <div class="col-12">
                 <form method="post" action="/actions/post.php">
@@ -27,16 +21,9 @@ $title="Creating";ob_start() ?>
                         <input type="text" class="form-control" name="post_picture" placeholder="Url please">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Famous Tag On InstaCoding</label>
-                        <select name="tag" id="tag">
-                                    <option value="">-- Select tag --</option>
-                                    <option value="food">#food</option>
-                                    <option value="sport">#sport</option>
-                                    <option value="humour">#humour</option>
-                                    <option value="lifestyle">#lifestyle</option>
-                                    <option value="mood">#mood</option>
-                                    <option value="selfie">#selfie</option>
-                                </select>
+                        <label for="exampleInputPassword1">Tag</label>
+                        <input type="text"class="form-control" name="tag" placeholder="tag please">
+                        
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Submit</button>

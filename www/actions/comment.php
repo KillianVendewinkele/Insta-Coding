@@ -13,7 +13,7 @@ $query = $db->prepare($sql);
 $query->execute([
 	':contenu' => $_POST['comment'],
 	':post' => $_POST['idPost'],
-	':id' => $_SESSION['id']
+	':id' => $_SESSION['user']['id']
 	
 ]);
 
