@@ -14,11 +14,11 @@ ob_start() ?>
                 <form method="post" action="/actions/updateCom.php">
                     <div class="form-group">
                         <label>Commentaire</label>
-                        <input type="hidden" class="form-control" id="exampleInputEmail1" name="com" value="<?= $_SESSION['upd']['0']?>"  placeholder="Choose a description">
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="com" value="<?= $_SESSION['upd']['0']?>"  placeholder="Choose a description">
                     </div>
                     <div class="form-group">
                        
-                        <input type="text" class="form-control" name="id" value="<?= $_SESSION['upd']['1']?>" >
+                        <input type="hidden" class="form-control" name="id" value="<?= $_SESSION['upd']['1']?>" >
                     </div>
                    
                     <div class="col-12">
