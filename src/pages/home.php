@@ -6,7 +6,7 @@ $title="Home";
         $query = $db->prepare($sql);
         $query->execute([]);
         $listPost = $query->fetchAll(PDO::FETCH_ASSOC);
-        shuffle($listPost);
+        //shuffle($listPost);
  //Afficher les commentaires       
         $sql = 'SELECT comment.contenuCom,comment.timeCom,comment.idPost, comment.idComment, users.pseudo FROM `comment`, `users` WHERE comment.id = users.id  ';
         $query = $db->prepare($sql);

@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-
+        <p><?= $value['likes']?>   Likes </p>
         <h5 class="card-title"><?php echo $value['contenu'] ; ?></h5>
         <div class="row">
             <div class="com">

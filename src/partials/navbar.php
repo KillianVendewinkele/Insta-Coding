@@ -29,7 +29,7 @@
                           <div class="col-12">
                               <div class="row">
                                   <div class="col">
-                                         <input type="text" name="tag" class="form-control"placeholder="Search"> 
+                                         <input type="text" name="tag" class="form-control"placeholder="Search a post with tag"> 
                                   </div>
                                   <div class="col-0">
                                         <button type="submit" style="height:10%;height:50px;" class="btn btn-light">

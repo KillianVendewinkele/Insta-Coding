@@ -1,4 +1,4 @@
 <form method="post" action="/actions/like.php">
     <input type="hidden" name="idPost" value="<?= $value['idPost'] ?>">
-    <a style="bottom:O;"href="#"> <button type="submit" class="btn btn-danger" name="val"value='<?= $value['likes']; ?>'> <?= $value['likes'] ?>&hearts; </button> </a>
+    <a href=""> <button type="submit" class="btn btn-default" style="background:none;" name="val" ><i class="bi bi-heart" style="color:red;"></i></button> </a>
 </form>
