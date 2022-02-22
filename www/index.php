@@ -5,10 +5,7 @@ $content =" ";
 $request = $_SERVER['REQUEST_URI'];
 switch ($request) {
    case '/' :
-        require __DIR__ . '/../src/pages/login.php';
-        break;
-    case '/Login' :
-        require __DIR__ . '/../src/pages/login.php';
+        require __DIR__ . '/../src/pages/main.php';
         break;
     case '/Home' :
         require __DIR__ . '/../src/pages/home.php';
@@ -34,6 +31,9 @@ switch ($request) {
     case '/Comment' :
         require __DIR__ . '/../src/pages/comment.php';
         break;
+   case '/Settings' :
+        require __DIR__ . '/../src/pages/settings.php';
+        break;  
    default:
         http_response_code(404);
         require __DIR__ . '/../src/pages/404.php';
@@ -56,7 +56,20 @@ switch ($request) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"  ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous" ></script>
     <script src="//code.jquery.com/jquery-2.1.4.js"></script>
-    <style>
+   
+    
+</head>
+<body style="margin-top:100px;background: #FFFFF;">
+<?php require_once __DIR__ . "/../src/partials/navbar.php" ?>
+ <section id="fond">
+<?php if($content == " "){
+        echo $content;
+}else{
+    echo $content;
+} ?>
+</section>
+</body>
+ <style>
         #fond{
         margin-top:30px;
         height:auto;
@@ -83,16 +96,4 @@ switch ($request) {
         
        
     </style>
-    
-</head>
-<body style="margin-top:100px;background: #EEEEEE;">
-<?php require_once __DIR__ . "/../src/partials/navbar.php" ?>
- <section id="fond">
-<?php if($content == " "){
-        echo $content;
-}else{
-    echo $content;
-} ?>
-</section>
-</body>
 </html>
