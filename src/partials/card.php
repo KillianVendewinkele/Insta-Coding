@@ -1,4 +1,4 @@
-<div class="card ">
+<div class="card bg-light">
     <div class="card-header"style="background: none;">
         <?php  require __DIR__.'/../../src/partials/headerCard.php';  ?>
     </div>
@@ -8,7 +8,7 @@
         alt="Card image cap"
         style="max-height:inherit"
     />
-    <div class="card-body">
+    <div class="card-body bg-light">
         <div class="row justify-content-between">
             <div class="col-12">
                 <div class="row ">

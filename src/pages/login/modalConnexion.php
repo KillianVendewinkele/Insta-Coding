@@ -20,10 +20,10 @@
         aria-labelledby="basicModal"
         aria-hidden="true"
     >
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog ">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Large Modal</h4>
+                    <h4 class="modal-title" id="myModalLabel">Connexion</h4>
                     <button
                         type="button"
                         class="close"
@@ -35,29 +35,22 @@
                 </div>
                 <div class="modal-body">
                    <form method="post" action="/actions/login.php">
-                            <div class="form-group">
-                                <label for="">Your Email</label>
+                            <div class="form-group ">
+                                <div class="col-3">
+                                    <label for="">Your Email</label>
+                                </div>
+                                
                                 <input type="text" class="form-control" class="form-control" name="email" placeholder="Write your email ">
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
-                                <label for="">Password</label>
+                                <div class="col-3">
+                                     <label for="">Password</label>
+                                </div>
                                 <input type="password" class="form-control" class="form-control" name="password" placeholder="Write your password">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Connect </button>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button
-                        type="button"
-                        class="btn btn-default"
-                        data-dismiss="modal"
-                    >
-                        Close
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        Save changes
-                    </button>
                 </div>
             </div>
         </div>

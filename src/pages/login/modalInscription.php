@@ -20,7 +20,7 @@
         aria-labelledby="basicModal"
         aria-hidden="true"
     >
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog ">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="myModalLabel">Inscription</h4>
@@ -48,20 +48,8 @@
                                 <label for="exampleInputPassword1">Your Password</label>
                                 <input type="password" class="form-control" name="password" placeholder="Write your Password">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Sign up</button>
                         </form>
-                </div>
-                <div class="modal-footer">
-                    <button
-                        type="button"
-                        class="btn btn-default"
-                        data-dismiss="modal"
-                    >
-                        Close
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        Save changes
-                    </button>
                 </div>
             </div>
         </div>

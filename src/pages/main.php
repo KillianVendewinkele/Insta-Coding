@@ -6,12 +6,12 @@ ob_start() ?>
 <div class="container-fluid ">
     <div class="row">
         <div class="col-12  text-center">
-                <div class=" card  text-center ">
-                    <div class="card-body">
+                <div class=" card  text-center">
+                    <div class="card-body bg-light">
                         <h2 class="card-title">Instagram</h2>
                         <div class="row">
                             <!-- ERREUR CONNEXION OU INSCRIPTION-->
-                            <div class="col-12">
+                            <div class="col-12 ">
                                 <?php if(isset($_SESSION['login_error'])) { ?>
                                 <div class="alert alert-danger">
                                     <?= $_SESSION['login_error'] ?>

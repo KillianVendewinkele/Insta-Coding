@@ -7,6 +7,9 @@ switch ($request) {
    case '/' :
         require __DIR__ . '/../src/pages/main.php';
         break;
+    case '/Main' :
+        require __DIR__ . '/../src/pages/main.php';
+        break;
     case '/Home' :
         require __DIR__ . '/../src/pages/home.php';
         break;
@@ -93,7 +96,57 @@ switch ($request) {
             max-height:100px;
             overflow: scroll;
         }
-        
-       
+        .Inputcomment{
+            border:none;
+            border-radius: 20px;
+        }
+        #btnCom{
+            padding:0;
+            font-size:15px;
+            margin-left:5px;
+        }
+        /* Style the tab */
+        .tab {
+        float: left;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        width: 30%;
+        height: 300px;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+        display: block;
+        background-color: inherit;
+        color: black;
+        padding: 22px 16px;
+        width: 100%;
+        border: none;
+        outline: none;
+        text-align: left;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+        background-color: #ddd;
+        }
+
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+        background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+        float: left;
+        padding: 0px 12px;
+        border: 1px solid #ccc;
+        width: 70%;
+        border-left: none;
+        height: 300px;
+        }
     </style>
 </html>
