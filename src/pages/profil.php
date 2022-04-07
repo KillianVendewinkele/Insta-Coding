@@ -28,6 +28,7 @@ $title="Profil";
         
 ob_start() ?>
 
+
 <?php require __DIR__.'/../../src/partials/headerProfil.php'; ?>
  <div class="container-fluid mt-4">
     <div class="row ">
